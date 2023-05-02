@@ -1,0 +1,182 @@
+.musicPlayer {
+  &-section {
+    width: 100%;
+    height: 11.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color-black-alpha;
+    backdrop-filter: blur(50px);
+    transition: 1s;
+
+    &.active {
+      width: 100%;
+      height: 100%;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+
+      & .controls {
+        justify-content: space-between;
+        width: 100%;
+        font-size: 5rem;
+
+        & span {
+          font-size: 2.5rem;
+          display: block;
+          opacity: 0.5;
+
+          &.active {
+            color: $color-primary;
+            opacity: 1;
+          }
+        }
+      }
+
+      & .hide {
+        display: block;
+        opacity: 1;
+      }
+
+      & .seekBar--0 {
+        position: relative;
+        display: block;
+        border-radius: 5rem;
+        margin: auto;
+      }
+
+      & .current-song-name {
+        font-size: 2.8rem;
+      }
+    }
+
+    & .hide {
+      display: none;
+      opacity: 0;
+      transition: 1s;
+    }
+  }
+}
+
+
+.seekBar--0 {
+  -webkit-appearance: none;
+  width: 100%;
+  position: absolute;
+  top: -0.4rem;
+  height: 0.8rem;
+  background-color: $color-black;
+  overflow: hidden;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1rem;
+    width: 0.5rem;
+    background: $color-primary;
+    cursor: pointer;
+    box-shadow: -40rem 0 0 40rem $color-primary;
+  }
+}
+
+.current-song-name {
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+.artist-name {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.cover {
+  width: 35vh;
+  height: 35vh;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+}
+
+.controls {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  font-size: 3rem;
+
+  & span {
+    display: none;
+    opacity: 0;
+    transition: 1s;
+  }
+
+  & .main i {
+    margin: 0 0.5rem;
+    display: none;
+
+    &.active {
+      display: inline;
+    }
+  }
+}
+
+.current-time {
+  position: absolute;
+  margin-top: 0.5rem;
+  left: 3rem;
+}
+
+.duration {
+  position: absolute;
+  margin-top: 0.5rem;
+  right: 3rem;
+}
+
+.icon {
+  position: absolute;
+  top: 1.5rem;
+  transform: scale(1.1);
+}
+
+.back-btn {
+  left: 1.5rem;
+}
+
+.nav-btn {
+  right: 1.5rem;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 10rem;
+  height: 4rem;
+  position: absolute;
+  right: -3.5rem;
+  bottom: 8rem;
+  transform: rotate(-90deg);
+  border-radius: 2rem;
+  background-color: $color-black-alpha;
+  overflow: hidden;
+  opacity: 0;
+  display: none;
+
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 4rem;
+    width: 1rem;
+    background: $color-primary;
+    box-shadow: -20rem 0 0.1rem 20rem $color-primary;
+  }
+}

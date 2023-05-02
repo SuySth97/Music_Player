@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: $color-black;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  max-width: 37.5rem;
+  position: relative;
+  background-color: $color-black;
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
